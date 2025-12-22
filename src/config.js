@@ -1,13 +1,13 @@
 const config = {
 	//网页元数据
 	metaData: {
-		title: 'Light的个人主页🎉',
+		title: 'Light的个人主页',
 		description: '欢迎来到Light的奇妙世界！',
-		keywords: 'Light,leleo,个人主页,个人网站',
+		keywords: 'Light,light,个人主页,个人网站',
 		icon: '/favicon.ico'   //网页图标，支持外链
 	},
 
-	avatar: "/img/avatar.jpg", // 头像
+	avatar: "/img/Verity.jpg", // 头像
 	welcometitle: "Hi, I'm Light", // 标题
 
 	// 颜色配置
@@ -53,8 +53,8 @@ const config = {
 
 	//社交按钮
 	socialPlatformIcons: [
-		{ icon: "mdi-github", link: "https://www.github.com/leleo886" },
-		{ icon: "mdi-email", link: "mailto:leleo886@foxmail.com" },
+		{ icon: "mdi-github", link: "https://github.com/Light-w-m" },
+		{ icon: "mdi-email", link: "Light050712@163.com" },
 		{ icon: "mdi-qqchat", link: "https://im.qq.com/" },
 		{ icon: "mdi-wechat", link: "https://wx.qq.com/" },
 		{ icon: "mdi-youtube", link: "https://www.youtube.com" },
