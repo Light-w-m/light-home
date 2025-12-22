@@ -5,7 +5,7 @@
 	"metaData": {
 		"title": "Light的个人主页",
 		"description": "欢迎来到Light的奇妙世界！",
-		"keywords": "Leleo,leleo,个人主页,个人网站",
+		"keywords": "Light,light,个人主页,个人网站",
 		"icon": "/favicon.ico"
 	},
 	"avatar": "/img/avatar.jpg",
