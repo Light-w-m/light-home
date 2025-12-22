@@ -9,7 +9,7 @@
 		"icon": "/favicon.ico"
 	},
 	"avatar": "/img/avatar.jpg",
-	"welcometitle": "Hi, I'm Leleo",
+	"welcometitle": "Hi, I'm Light",
 	"color": {
 		"themecolor": "#FFFFFF",
 		"welcometitlecolor": "#FFFFFF",
