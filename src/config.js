@@ -22,16 +22,16 @@ const config = {
 	blur: 5, // 毛玻璃模糊效果
 
 	// 我的标签
-	tags: ['乐观开朗', '温柔体贴', '随和亲切', '冷静沉着', '才思敏捷', '风趣幽默', '刚正不阿', '善解人意'],
+	tags: ['潜水怪', '摸鱼达人', '不会飞的鸟'],
 
 	// 默认背景壁纸
 	background: {
 		"pc": {   //pc端
 			"type": "pic",   //"pic":静态壁纸;"video":动态壁纸
 			"datainfo": {
-				"title": "海洋女孩",
-				"preview": "/img/wallpaper/static/海洋女孩/image-pre.webp",
-				"url": "/img/wallpaper/static/海洋女孩/image.png",     //当然，也可填写网络地址或壁纸api，如随机PC壁纸api："url":"https://t.mwm.moe/pc"
+				"title": "cvKMKhue",
+				"preview": "https://s21.ax1x.com/2025/07/23/pVGlNqS.md.jpg",
+				"url": "https://s21.ax1x.com/2025/07/23/pVGlNqS.jpg",     //当然，也可填写网络地址或壁纸api，如随机PC壁纸api："url":"https://t.mwm.moe/pc"
 			},
 		},
 		"mobile": {   //移动端
@@ -47,8 +47,8 @@ const config = {
 
 	//极坐标图数据
 	polarChart: {
-		skills: ['Vue.js', 'React', 'JavaScript', 'Node', 'Java', 'Python', 'linux', 'Docker', 'MySQL', 'MongoDB', 'AWS'],
-		skillPoints: [85, 78, 88, 90, 80, 78, 85, 65, 82, 78, 70],
+		skills: ['Sleep', 'Eat', 'Game', 'Sport', 'Study'],
+		skillPoints: [85, 78, 88, 90, 60],
 	},
 
 	//社交按钮
@@ -62,9 +62,15 @@ const config = {
 	],
 
 	//打字机
+	// typeWriterStrings: [
+	// 	"如果你看到了这行字，说明我已经成功吸引到了你的注意力。",
+	// 	"顶峰的少年，给了你所有细节，你却说我不是迪迦，给不了你想要的光。",
+	// 	"心简单，世界就简单，幸福才会生长；心自由，生活就自由，到哪都有快乐。",
+	// 	"生命太短，没有时间留给遗憾，若不是终点，请微笑一直向前。"
+	// ],
 	typeWriterStrings: [
-		"如果你看到了这行字，说明我已经成功吸引到了你的注意力。",
-		"顶峰的少年，给了你所有细节，你却说我不是迪迦，给不了你想要的光。",
+		// "如果你看到了这行字，说明我已经成功吸引到了你的注意力。",
+		"当终焉的陨石在白垩纪降下，唯有会飞的鸟儿才能脱出既定的命运",
 		"心简单，世界就简单，幸福才会生长；心自由，生活就自由，到哪都有快乐。",
 		"生命太短，没有时间留给遗憾，若不是终点，请微笑一直向前。"
 	],
@@ -138,17 +144,17 @@ const config = {
 
 	//项目卡片 其中 字段"show"控制初始卡片的text是否展开
 	projectcards: [
-		{ go: "🚀 前往", img: "/img/sunshine.jpg", title: "Project 1", subtitle: "1,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
-		{ go: "🗂️ 前往", img: "/img/sunshine.jpg", title: "Project 2", subtitle: "2,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
-		{ go: "📝 前往", img: "/img/sunshine.jpg", title: "Project 3", subtitle: "3,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
-		{ go: "👍 前往", img: "/img/sunshine.jpg", title: "Project 4", subtitle: "4,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
-		{ go: "🗃 前往", img: "/img/sunshine.jpg", title: "Project 5", subtitle: "5,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
-		{ go: "🎨 前往", img: "/img/sunshine.jpg", title: "Project 6", subtitle: "6,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
-		{ go: "💍 前往", img: "/img/sunshine.jpg", title: "Project 7", subtitle: "7,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
-		{ go: "🔍 前往", img: "/img/sunshine.jpg", title: "Project 8", subtitle: "8,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://leleo.top", show: false },
+		{ go: "🚀 前往", img: "/img/sunshine.jpg", title: "Project 1", subtitle: "1,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "🗂️ 前往", img: "/img/sunshine.jpg", title: "Project 2", subtitle: "2,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "📝 前往", img: "/img/sunshine.jpg", title: "Project 3", subtitle: "3,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "👍 前往", img: "/img/sunshine.jpg", title: "Project 4", subtitle: "4,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "🗃 前往", img: "/img/sunshine.jpg", title: "Project 5", subtitle: "5,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "🎨 前往", img: "/img/sunshine.jpg", title: "Project 6", subtitle: "6,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "💍 前往", img: "/img/sunshine.jpg", title: "Project 7", subtitle: "7,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "🔍 前往", img: "/img/sunshine.jpg", title: "Project 8", subtitle: "8,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
 	],
 
-	statement: ["备案号：XXICP备123456789号", "Copyright © 2025 Leleo"],
+	statement: ["备案号：XXICP备123456789号", "Copyright © 2025 Light"],
 }
 
 export default config
