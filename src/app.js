@@ -36,6 +36,8 @@ export default {
       musicinfo: null,
       musicinfoLoading:false,
       lyrics:{},
+      activeBackground: null,
+      isVideoPaused: false,
       socialPlatformIcons: null,
       isExpanded: false,
       stackicons:[
@@ -148,8 +150,8 @@ export default {
       this.setupAudioListener();  //设置 ended 事件监听器，当歌曲播放结束时自动调用 nextTrack 方法。
   },
 
-  beforeDestroy() {     //在组件销毁前移除事件监听器，防止内存泄漏。
-    this.$refs.audioPlayer.removeEventListener('ended',  this.nextTrack);
+  beforeUnmount() {     //在组件销毁前移除事件监听器，防止内存泄漏。
+    this.$refs.audioPlayer?.removeEventListener('ended',  this.nextTrack);
   },
 
   watch:{
@@ -181,10 +183,15 @@ export default {
 
   computed: {
     currentSong() {
-      return this.musicinfo[this.playlistIndex];
+      return this.musicinfo?.[this.playlistIndex];
     },
     audioPlayer() {
       return this.$refs.audioPlayer;
+    },
+    currentWallpaperTitle() {
+      const defaultBackground = this.xs ? this.configdata.background.mobile : this.configdata.background.pc;
+      const background = this.activeBackground || defaultBackground;
+      return background?.datainfo?.title || '沉浸壁纸';
     }
   },
   
@@ -212,17 +219,21 @@ export default {
         if(xs.value){
           if(leleodatabackground.mobile.type == "pic"){
             root.style.setProperty('--leleo-background-image-url', `url('${leleodatabackground.mobile.datainfo.url}')`);
+            this.activeBackground = leleodatabackground.mobile;
             imageurl = leleodatabackground.mobile.datainfo.url;
             return imageurl;
           }else{
+            this.activeBackground = leleodatabackground.mobile;
             this.videosrc = leleodatabackground.mobile.datainfo.url;
           }
         }else{
           if(leleodatabackground.pc.type == "pic"){
             root.style.setProperty('--leleo-background-image-url', `url('${leleodatabackground.pc.datainfo.url}')`);
+            this.activeBackground = leleodatabackground.pc;
             imageurl = leleodatabackground.pc.datainfo.url;
             return imageurl;
           }else{
+            this.activeBackground = leleodatabackground.pc;
             this.videosrc = leleodatabackground.pc.datainfo.url;
           }
         }
@@ -231,17 +242,21 @@ export default {
         if(xs.value){
           if(this.configdata.background.mobile.type == "pic"){
             root.style.setProperty('--leleo-background-image-url', `url('${this.configdata.background.mobile.datainfo.url}')`);
+            this.activeBackground = this.configdata.background.mobile;
             imageurl = this.configdata.background.mobile.datainfo.url;
             return imageurl;
           }else{
+            this.activeBackground = this.configdata.background.mobile;
             this.videosrc = this.configdata.background.mobile.datainfo.url;
           }
         }else{
           if(this.configdata.background.pc.type == "pic"){
             root.style.setProperty('--leleo-background-image-url', `url('${this.configdata.background.pc.datainfo.url}')`);
+            this.activeBackground = this.configdata.background.pc;
             imageurl = this.configdata.background.pc.datainfo.url;
             return imageurl;
           }else{
+            this.activeBackground = this.configdata.background.pc;
             this.videosrc = this.configdata.background.pc.datainfo.url;
           }
           
@@ -283,10 +298,13 @@ export default {
     },
 
     setupAudioListener() {
-      this.$refs.audioPlayer.addEventListener('ended', this.nextTrack);
+      this.$refs.audioPlayer?.addEventListener('ended', this.nextTrack);
     },
 
     togglePlay() {
+      if(!this.audioPlayer || !this.musicinfo?.length){
+        return;
+      }
       if (!this.isPlaying) {
         this.audioPlayer.play();
         this.isVdMuted = true;
@@ -297,14 +315,17 @@ export default {
       this.isPlaying = !this.musicinfoLoading && !this.isPlaying;
     },
     previousTrack() {
+      if(!this.musicinfo?.length) return;
       this.playlistIndex = this.playlistIndex > 0 ? this.playlistIndex - 1 : this.musicinfo.length - 1;
       this.updateAudio();
     },
     nextTrack() {
+      if(!this.musicinfo?.length) return;
       this.playlistIndex = this.playlistIndex < this.musicinfo.length - 1 ? this.playlistIndex + 1 : 0;
       this.updateAudio();
     },
     updateAudio() {
+      if(!this.audioPlayer || !this.currentSong) return;
       this.audioPlayer.src = this.currentSong.url;
       this.$refs.audiotitle.innerText = this.currentSong.title;
       this.$refs.audioauthor.innerText = this.currentSong.author;
@@ -334,6 +355,18 @@ export default {
     },
     collapseSwitch() {
       this.isExpanded = false;
+    },
+    toggleBackgroundVideo() {
+      const video = this.$refs.VdPlayer;
+      if(!video) return;
+
+      if(video.paused){
+        video.play();
+        this.isVideoPaused = false;
+      }else{
+        video.pause();
+        this.isVideoPaused = true;
+      }
     },
   }
 };

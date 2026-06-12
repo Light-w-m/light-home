@@ -23,6 +23,66 @@
     .floating-switch:hover {
         transform: translateX(0); /* 悬停时完全展开 */
     }
+    .wallpaper-stage {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        color: var(--leleo-vcard-color);
+        pointer-events: none;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, .55);
+
+        &__top,
+        &__bottom {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            pointer-events: auto;
+        }
+
+        &__top {
+            top: 22px;
+        }
+
+        &__bottom {
+            bottom: 24px;
+            justify-content: center;
+        }
+
+        &__chip,
+        &__btn,
+        &__action {
+            backdrop-filter: blur(calc(var(--leleo-blur) + 8px));
+            color: var(--leleo-vcard-color);
+            background: rgba(0, 0, 0, .22);
+        }
+
+        &__center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(720px, 92vw);
+            text-align: center;
+        }
+
+        &__time {
+            font-size: clamp(3.2rem, 12vw, 8rem);
+            line-height: 1;
+            font-weight: 800;
+        }
+
+        &__date {
+            margin-top: 12px;
+            font-size: clamp(.9rem, 2vw, 1.25rem);
+            font-weight: 700;
+            letter-spacing: 0;
+            opacity: .9;
+        }
+    }
     /* 调整视频元素的样式，使其全屏作为背景 */
     .video-bg {
         position: fixed;

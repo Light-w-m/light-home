@@ -22,6 +22,48 @@
         @mouseleave="collapseSwitch"
       ></v-switch>
     </div>
+
+    <transition name="fade">
+      <div v-show="!isloading && isClearScreen" class="wallpaper-stage">
+        <div class="wallpaper-stage__top">
+          <v-chip prepend-icon="mdi-image-filter-hdr" variant="tonal" class="wallpaper-stage__chip">
+            {{ currentWallpaperTitle }}
+          </v-chip>
+          <v-btn
+            icon="mdi-close"
+            variant="tonal"
+            size="small"
+            class="wallpaper-stage__btn"
+            @click="isClearScreen = false"
+          ></v-btn>
+        </div>
+
+        <div class="wallpaper-stage__center">
+          <div class="wallpaper-stage__time clock-font">{{ formattedTime }}</div>
+          <div class="wallpaper-stage__date">{{ formattedDate }}</div>
+        </div>
+
+        <div class="wallpaper-stage__bottom">
+          <v-btn
+            variant="tonal"
+            prepend-icon="mdi-cog-outline"
+            class="wallpaper-stage__action"
+            @click="dialog1 = true; isClearScreen = false"
+          >
+            个性设置
+          </v-btn>
+          <v-btn
+            v-if="videosrc"
+            variant="tonal"
+            :prepend-icon="isVideoPaused ? 'mdi-play' : 'mdi-pause'"
+            class="wallpaper-stage__action"
+            @click="toggleBackgroundVideo"
+          >
+            {{ isVideoPaused ? '播放壁纸' : '暂停壁纸' }}
+          </v-btn>
+        </div>
+      </div>
+    </transition>
     
     <div v-show="!isloading && !isClearScreen" :style="xs||sm?{'overflow-y': 'auto','overflow-x': 'hidden'}:{}">
         <v-row>

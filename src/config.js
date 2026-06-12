@@ -147,14 +147,14 @@ const config = {
 
 	//项目卡片 其中 字段"show"控制初始卡片的text是否展开
 	projectcards: [
-		{ go: "🚀 前往", img: "/img/sunshine.jpg", title: "个人介绍", subtitle: "1,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
-		{ go: "🗂️ 前往", img: "/img/sunshine.jpg", title: "个人项目", subtitle: "2,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
-		{ go: "📝 前往", img: "/img/sunshine.jpg", title: "个人博客", subtitle: "3,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
-		{ go: "👍 前往", img: "/img/sunshine.jpg", title: "Project 4", subtitle: "4,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
-		{ go: "🗃 前往", img: "/img/sunshine.jpg", title: "Project 5", subtitle: "5,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
-		{ go: "🎨 前往", img: "/img/sunshine.jpg", title: "Project 6", subtitle: "6,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
-		{ go: "💍 前往", img: "/img/sunshine.jpg", title: "Project 7", subtitle: "7,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
-		{ go: "🔍 前往", img: "/img/sunshine.jpg", title: "Project 8", subtitle: "8,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "", show: false },
+		{ go: "🚀 前往", img: "/img/sunshine.jpg", title: "个人介绍", subtitle: "关于我、技能与日常状态", text: "把这里改成你的自我介绍入口：经历、兴趣、技术偏好，以及想被别人记住的一句话。", url: "", status: "Draft", tags: ["Profile", "About"], show: false },
+		{ go: "🗂️ 前往", img: "/img/sunshine.jpg", title: "个人项目", subtitle: "作品集与在线 Demo", text: "可以放你的 GitHub 仓库、线上预览、技术栈和项目亮点。接入 url 后会自动变成可跳转入口。", url: "", status: "Soon", tags: ["Vue", "Demo"], show: false },
+		{ go: "📝 前往", img: "/img/sunshine.jpg", title: "个人博客", subtitle: "文章、笔记与折腾记录", text: "适合连接博客、语雀、Notion、Halo、VitePress 等内容站。", url: "", status: "Plan", tags: ["Blog", "Notes"], show: false },
+		{ go: "👍 前往", img: "/img/sunshine.jpg", title: "灵感收藏", subtitle: "喜欢的网站与设计参考", text: "把常用工具、设计灵感、开发资源整理成一个公开收藏夹。", url: "", status: "Idea", tags: ["Links", "Design"], show: false },
+		{ go: "🗃 前往", img: "/img/sunshine.jpg", title: "资源仓库", subtitle: "壁纸、组件与脚本", text: "可以作为静态资源站入口，放常用资源、壁纸包、配置模板。", url: "", status: "Idea", tags: ["Assets", "Tools"], show: false },
+		{ go: "🎨 前往", img: "/img/sunshine.jpg", title: "视觉实验室", subtitle: "动效、主题与交互草稿", text: "适合展示 Canvas、Three.js、CSS 动效或主页主题实验。", url: "", status: "Lab", tags: ["Motion", "UI"], show: false },
+		{ go: "💍 前往", img: "/img/sunshine.jpg", title: "纪念相册", subtitle: "照片、旅行与重要瞬间", text: "后续可以做成时间线相册，静态图片也能很好看。", url: "", status: "Soon", tags: ["Gallery", "Life"], show: false },
+		{ go: "🔍 前往", img: "/img/sunshine.jpg", title: "快捷导航", subtitle: "搜索之外的一键抵达", text: "和 Ctrl K 快捷面板配合，作为常用站点、项目和社交链接的入口。", url: "", status: "Ready", tags: ["Search", "Quick"], show: false },
 	],
 
 	statement: ["备案号：XXICP备123456789号", "Copyright © 2025 Light"],
