@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "本地预览: npm run dev",
+      "type": "shell",
+      "command": "npm run dev",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "ready in|Local:"
+        }
+      },
+      "group": "build",
+      "detail": "启动 Vite 本地开发服务器，改代码后浏览器会自动刷新。"
+    },
+    {
+      "label": "局域网预览: npm run dev:lan",
+      "type": "shell",
+      "command": "npm run dev:lan",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "ready in|Network:"
+        }
+      },
+      "group": "build",
+      "detail": "启动局域网可访问的 Vite 开发服务器，适合用手机预览。"
+    }
+  ]
+}

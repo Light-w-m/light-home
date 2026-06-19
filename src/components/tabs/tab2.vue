@@ -156,7 +156,7 @@ import { useDisplay } from 'vuetify';
 import { setCookie, getCookie, eraseCookie } from '../../utils/cookieUtils.js';
 import config from '../../config.js';
 export default {
-    emits: ['cancel'],
+    emits: ['cancel','apply-background'],
     setup() {
         const { smAndDown } = useDisplay();
         return { smAndDown };
@@ -243,32 +243,29 @@ export default {
                 this.snackbar = true;
                 return;
             }
-            let leleodatabackground = this.getCookie("leleodatabackground");
-            delete this.radios.loaded;
+            const leleodatabackground = this.getCookie("leleodatabackground") || {};
+            const selectedWallpaper = { ...this.radios };
+            delete selectedWallpaper.loaded;
+
+            this.background = {
+                pc: leleodatabackground.pc || this.configdata.background.pc,
+                mobile: leleodatabackground.mobile || this.configdata.background.mobile,
+            };
+
             if(this.type == 'mobile'){
                 this.background.mobile.type= this.tab === 'tab-1'? 'pic' : 'video';
-                this.background.mobile.datainfo = this.radios;
-                if(leleodatabackground){
-                    this.background.pc = leleodatabackground.pc;
-                }else{
-                    this.background.pc = this.configdata.background.pc;
-                }
+                this.background.mobile.datainfo = selectedWallpaper;
             }else{
                 this.background.pc.type= this.tab === 'tab-1'? 'pic' : 'video';
-                this.background.pc.datainfo = this.radios;
-                if(leleodatabackground){
-                    this.background.mobile = leleodatabackground.mobile;
-                }else{
-                    this.background.mobile = this.configdata.background.mobile;
-                }
+                this.background.pc.datainfo = selectedWallpaper;
             }
 
             this.loading2 = true
             setTimeout(() => {
-                this.loading = false;
-                this.setCookie('leleodatabackground', this.background,0.005);
-                location.reload();
-            }, 800)   
+                this.loading2 = false;
+                this.setCookie('leleodatabackground', this.background,365);
+                this.$emit('apply-background', this.background);
+            }, 300)
         },
         redefault(){              
             this.loading1 = true

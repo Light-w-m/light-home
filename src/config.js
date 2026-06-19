@@ -54,11 +54,8 @@ const config = {
 	//社交按钮
 	socialPlatformIcons: [
 		{ icon: "mdi-github", link: "https://github.com/Light-w-m" },
-		{ icon: "mdi-email", link: "Light050712@163.com" },
-		{ icon: "mdi-qqchat", link: "https://im.qq.com/" },
-		{ icon: "mdi-wechat", link: "https://wx.qq.com/" },
-		{ icon: "mdi-youtube", link: "https://www.youtube.com" },
-		{ icon: "mdi-facebook", link: "https://www.facebook.com" }
+		{ icon: "mdi-email", link: "mailto:Light050712@163.com" },
+		{ icon: "mdi-qqchat", link: "https://im.qq.com/" }
 	],
 
 	//打字机
@@ -88,9 +85,9 @@ const config = {
 		pic: [
 			{ "title": "海洋女孩", "preview": "/img/wallpaper/static/海洋女孩/image-pre.webp", "url": "/img/wallpaper/static/海洋女孩/image.png" },
 			{ "title": "书房夜晚", "preview": "/img/wallpaper/static/书房夜晚/image-pre.webp", "url": "/img/wallpaper/static/书房夜晚/image.png" },
-			{ "title": "安逸舒适", "preview": "/img/wallpaper/static/安逸舒适/image-pre.webp", "url": "/img/wallpaper/static/安逸舒适/image.png" },
+			{ "title": "安逸舒适", "preview": "/img/wallpaper/static/安逸舒适/image-pre.webp", "url": "/img/wallpaper/static/安逸舒适/image-.png" },
 			{ "title": "初音未来", "preview": "/img/wallpaper/static/初音未来/image-pre.webp", "url": "/img/wallpaper/static/初音未来/image.png" },
-			{ "title": "哥伦比娅", "preview": "/img/wallpaper/static/哥伦比娅/image-pre.webp", "url": "/img/wallpaper/static/哥伦比娅/image.png" },
+			{ "title": "哥伦比娅", "preview": "/img/wallpaper/static/哥伦比娅/image-pre.webp", "url": "/img/wallpaper/static/哥伦比娅/image.jpg" },
 			{ "title": "jswcMaMj", "preview": "https://s21.ax1x.com/2025/07/23/pVGli59.md.jpg", "url": "https://s21.ax1x.com/2025/07/23/pVGli59.jpg" },
 			{ "title": "pgtTqoqq", "preview": "https://s21.ax1x.com/2025/07/23/pVGlmDO.md.jpg", "url": "https://s21.ax1x.com/2025/07/23/pVGlmDO.jpg" },
 			{ "title": "cvKMKhue", "preview": "https://s21.ax1x.com/2025/07/23/pVGlNqS.md.jpg", "url": "https://s21.ax1x.com/2025/07/23/pVGlNqS.jpg" },
@@ -151,7 +148,7 @@ const config = {
 		{ go: "🗂️ 前往", img: "/img/sunshine.jpg", title: "个人项目", subtitle: "作品集与在线 Demo", text: "可以放你的 GitHub 仓库、线上预览、技术栈和项目亮点。接入 url 后会自动变成可跳转入口。", url: "", status: "Soon", tags: ["Vue", "Demo"], show: false },
 		{ go: "📝 前往", img: "/img/sunshine.jpg", title: "个人博客", subtitle: "文章、笔记与折腾记录", text: "适合连接博客、语雀、Notion、Halo、VitePress 等内容站。", url: "", status: "Plan", tags: ["Blog", "Notes"], show: false },
 		{ go: "👍 前往", img: "/img/sunshine.jpg", title: "灵感收藏", subtitle: "喜欢的网站与设计参考", text: "把常用工具、设计灵感、开发资源整理成一个公开收藏夹。", url: "", status: "Idea", tags: ["Links", "Design"], show: false },
-		{ go: "🗃 前往", img: "/img/sunshine.jpg", title: "资源仓库", subtitle: "壁纸、组件与脚本", text: "可以作为静态资源站入口，放常用资源、壁纸包、配置模板。", url: "", status: "Idea", tags: ["Assets", "Tools"], show: false },
+		{ go: "🗃 前往", img: "/img/resources/photo/风景.jpg", title: "Photo", subtitle: "图片、壁纸与素材收藏", text: "这里收纳从本地导入的图片资源。部署后，别人可以通过当前域名访问这个资源页。", url: "/resources/index.html", status: "Ready", tags: ["Assets", "Gallery"], show: false },
 		{ go: "🎨 前往", img: "/img/sunshine.jpg", title: "视觉实验室", subtitle: "动效、主题与交互草稿", text: "适合展示 Canvas、Three.js、CSS 动效或主页主题实验。", url: "", status: "Lab", tags: ["Motion", "UI"], show: false },
 		{ go: "💍 前往", img: "/img/sunshine.jpg", title: "纪念相册", subtitle: "照片、旅行与重要瞬间", text: "后续可以做成时间线相册，静态图片也能很好看。", url: "", status: "Soon", tags: ["Gallery", "Life"], show: false },
 		{ go: "🔍 前往", img: "/img/sunshine.jpg", title: "快捷导航", subtitle: "搜索之外的一键抵达", text: "和 Ctrl K 快捷面板配合，作为常用站点、项目和社交链接的入口。", url: "", status: "Ready", tags: ["Search", "Quick"], show: false },
