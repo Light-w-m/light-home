@@ -216,52 +216,49 @@ export default {
       let leleodatabackground = this.getCookie("leleodatabackground");
       const { xs } = useDisplay();
       if(leleodatabackground){
-        if(xs.value){
-          if(leleodatabackground.mobile.type == "pic"){
-            root.style.setProperty('--leleo-background-image-url', `url('${leleodatabackground.mobile.datainfo.url}')`);
-            this.activeBackground = leleodatabackground.mobile;
-            imageurl = leleodatabackground.mobile.datainfo.url;
-            return imageurl;
-          }else{
-            this.activeBackground = leleodatabackground.mobile;
-            this.videosrc = leleodatabackground.mobile.datainfo.url;
-          }
-        }else{
-          if(leleodatabackground.pc.type == "pic"){
-            root.style.setProperty('--leleo-background-image-url', `url('${leleodatabackground.pc.datainfo.url}')`);
-            this.activeBackground = leleodatabackground.pc;
-            imageurl = leleodatabackground.pc.datainfo.url;
-            return imageurl;
-          }else{
-            this.activeBackground = leleodatabackground.pc;
-            this.videosrc = leleodatabackground.pc.datainfo.url;
-          }
-        }
+        return this.applyBackground(leleodatabackground, xs.value);
           
       }else{
-        if(xs.value){
-          if(this.configdata.background.mobile.type == "pic"){
-            root.style.setProperty('--leleo-background-image-url', `url('${this.configdata.background.mobile.datainfo.url}')`);
-            this.activeBackground = this.configdata.background.mobile;
-            imageurl = this.configdata.background.mobile.datainfo.url;
-            return imageurl;
-          }else{
-            this.activeBackground = this.configdata.background.mobile;
-            this.videosrc = this.configdata.background.mobile.datainfo.url;
-          }
-        }else{
-          if(this.configdata.background.pc.type == "pic"){
-            root.style.setProperty('--leleo-background-image-url', `url('${this.configdata.background.pc.datainfo.url}')`);
-            this.activeBackground = this.configdata.background.pc;
-            imageurl = this.configdata.background.pc.datainfo.url;
-            return imageurl;
-          }else{
-            this.activeBackground = this.configdata.background.pc;
-            this.videosrc = this.configdata.background.pc.datainfo.url;
-          }
-          
-        }
+        return this.applyBackground(this.configdata.background, xs.value);
       }
+    },
+
+    applyBackground(background, isMobile = this.xs) {
+      const root = document.documentElement;
+      const target = isMobile ? background.mobile : background.pc;
+      if(!target?.datainfo?.url) return "";
+
+      this.activeBackground = target;
+      this.isVideoPaused = false;
+
+      if(target.type == "pic"){
+        this.videosrc = "";
+        root.style.setProperty('--leleo-background-image-url', `url('${target.datainfo.url}')`);
+        this.$nextTick(() => {
+          if(this.$refs.VdPlayer){
+            this.$refs.VdPlayer.style.zIndex = -100;
+            this.$refs.VdPlayer.controls = false;
+          }
+        });
+        return target.datainfo.url;
+      }
+
+      root.style.setProperty('--leleo-background-image-url', 'none');
+      this.videosrc = target.datainfo.url;
+      this.$nextTick(() => {
+        const video = this.$refs.VdPlayer;
+        if(!video) return;
+        video.load();
+        video.play?.().catch(() => {});
+        video.style.zIndex = this.isClearScreen ? 0 : -100;
+        video.controls = this.isClearScreen;
+      });
+      return "";
+    },
+
+    applyBackgroundPreference(background) {
+      this.applyBackground(background);
+      this.dialog1 = false;
     },
 
     projectcardsShow(key){

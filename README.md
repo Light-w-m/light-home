@@ -69,6 +69,28 @@ npm install
 npm run dev
 ```
 
+启动后打开终端里显示的本地地址，通常是：
+
+```text
+http://127.0.0.1:5173/
+```
+
+之后修改代码会自动热更新，不需要 commit，也不需要部署到线上才能看到效果。满意后再提交代码，让 Vercel / CloudFlare Pages 自动发布正式站点。
+
+如果想用手机在同一 Wi-Fi 下预览：
+
+```bash
+npm run dev:lan
+```
+
+然后用手机打开终端里显示的 `Network` 地址。
+
+### 本地预览和线上预览的区别
+
+- **本地预览**：`npm.cmd run dev`，最快，适合边改边看，不需要提交。
+- **局域网预览**：`npm run dev:lan`，适合手机和平板看响应式效果。
+- **正式线上站**：提交到 GitHub 后由 Vercel / CloudFlare Pages 部署，适合确认无误后发布。
+
 ### Vercel在线部署
 
 > 无需服务器，点击链接一键在线部署到 [Vercel](https://vercel.com/new/clone?s=https://github.com/leleo886/leleo-home-page.git)（首先需要有github和vercel账号）

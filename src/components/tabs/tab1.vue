@@ -133,7 +133,7 @@ export default {
         setTimeout(() => {
             this.loading = false;
             // 注意数字String格式化
-            this.setCookie('leleodata', {color:this.color,brightness:String(this.brightness),blur:String(this.blur),backgroundblur:String(this.backgroundblur)},0.005);
+            this.setCookie('leleodata', {color:this.color,brightness:String(this.brightness),blur:String(this.blur),backgroundblur:String(this.backgroundblur)},365);
             location.reload();
         }, 800)   
     },
