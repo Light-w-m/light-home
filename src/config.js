@@ -108,19 +108,24 @@ const config = {
 		],
 		video: [
 			{
-				"title": "尼尔：机械纪元 团队",
-				"preview": "/img/wallpaper/dynamic/尼尔：机械纪元 团队/Nier-Automata-Team-pre.webm",
-				"url": "/img/wallpaper/dynamic/尼尔：机械纪元 团队/Nier-Automata-Team.webm"
+				"title": "kurhon",
+				"preview": "/img/wallpaper/dynamic/kurhon/kurhon.mp4",
+				"url": "/img/wallpaper/dynamic/kurhon/kurhon.mp4"
 			},
 			{
-				"title": "向往航天的女孩",
-				"preview": "/img/wallpaper/dynamic/向往航天的女孩/Toy-Aeroplane-pre.webm",
-				"url": "/img/wallpaper/dynamic/向往航天的女孩/Toy-Aeroplane.webm"
+				"title": "砂狼白子",
+				"preview": "/img/wallpaper/dynamic/砂狼白子/砂狼白子-new.mp4",
+				"url": "/img/wallpaper/dynamic/砂狼白子/砂狼白子-new.mp4"
 			},
 			{
-				"title": "世界很温柔《龙族》上杉绘梨衣",
-				"preview": "https://www.leleo.top/img/wallpaper/dynamic/%E4%B8%96%E7%95%8C%E5%BE%88%E6%B8%A9%E6%9F%94%E3%80%8A%E9%BE%99%E6%97%8F%E3%80%8B%E4%B8%8A%E6%9D%89%E7%BB%98%E6%A2%A8%E8%A1%A3/A2EF5E85-pre.webm",
-				"url": "https://www.leleo.top/img/wallpaper/dynamic/%E4%B8%96%E7%95%8C%E5%BE%88%E6%B8%A9%E6%9F%94%E3%80%8A%E9%BE%99%E6%97%8F%E3%80%8B%E4%B8%8A%E6%9D%89%E7%BB%98%E6%A2%A8%E8%A1%A3/A2EF5E85.webm"
+				"title": "松林",
+				"preview": "/img/wallpaper/dynamic/松林/松 林.mp4",
+				"url": "/img/wallpaper/dynamic/松林/松 林.mp4"
+			},
+			{
+				"title": "上杉绘梨衣",
+				"preview": "/img/wallpaper/dynamic/上杉绘梨衣/上杉绘梨衣.mp4",
+				"url": "/img/wallpaper/dynamic/上杉绘梨衣/上杉绘梨衣.mp4"
 			},
 		],
 		videoMobile: [
@@ -146,7 +151,7 @@ const config = {
 	projectcards: [
 		{ go: "🚀 前往", img: "/img/sunshine.jpg", title: "个人介绍", subtitle: "关于我、技能与日常状态", text: "把这里改成你的自我介绍入口：经历、兴趣、技术偏好，以及想被别人记住的一句话。", url: "", status: "Draft", tags: ["Profile", "About"], show: false },
 		{ go: "🗂️ 前往", img: "/img/sunshine.jpg", title: "个人项目", subtitle: "作品集与在线 Demo", text: "可以放你的 GitHub 仓库、线上预览、技术栈和项目亮点。接入 url 后会自动变成可跳转入口。", url: "", status: "Soon", tags: ["Vue", "Demo"], show: false },
-		{ go: "📝 前往", img: "/img/sunshine.jpg", title: "个人博客", subtitle: "文章、笔记与折腾记录", text: "适合连接博客、语雀、Notion、Halo、VitePress 等内容站。", url: "", status: "Plan", tags: ["Blog", "Notes"], show: false },
+		{ go: "📝 前往", img: "/img/blog-cover-markdown.png", title: "个人博客", subtitle: "文章、笔记与折腾记录", text: "已接入卡尔曼滤波学习笔记，后续可以继续把 Markdown 文章放进博客目录。", url: "/blog/index.html", status: "Ready", tags: ["Blog", "Notes"], show: false },
 		{ go: "👍 前往", img: "/img/sunshine.jpg", title: "灵感收藏", subtitle: "喜欢的网站与设计参考", text: "把常用工具、设计灵感、开发资源整理成一个公开收藏夹。", url: "", status: "Idea", tags: ["Links", "Design"], show: false },
 		{ go: "🗃 前往", img: "/img/resources/photo/风景.jpg", title: "Photo", subtitle: "图片、壁纸与素材收藏", text: "这里收纳从本地导入的图片资源。部署后，别人可以通过当前域名访问这个资源页。", url: "/resources/index.html", status: "Ready", tags: ["Assets", "Gallery"], show: false },
 		{ go: "🎨 前往", img: "/img/sunshine.jpg", title: "视觉实验室", subtitle: "动效、主题与交互草稿", text: "适合展示 Canvas、Three.js、CSS 动效或主页主题实验。", url: "", status: "Lab", tags: ["Motion", "UI"], show: false },

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Light 的博客文章。" />
+    <title>Light 的博客</title>
+    <link rel="stylesheet" href="/blog/blog.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body class="blog-page blog-post-page">
+    <main class="blog-shell">
+      <nav class="blog-topbar" aria-label="博客导航">
+        <a href="/" class="blog-brand">Light Home</a>
+        <span class="blog-topbar__divider"></span>
+        <a href="/blog/">Blog</a>
+      </nav>
+
+      <article class="post">
+        <header class="post-header">
+          <p class="blog-eyebrow" id="post-date">Notes</p>
+          <h1 id="post-title">加载中...</h1>
+          <p id="post-summary">正在读取文章内容。</p>
+        </header>
+        <div id="post-content" class="post-content" aria-live="polite"></div>
+      </article>
+    </main>
+    <script type="module" src="/blog/post.js"></script>
+  </body>
+</html>

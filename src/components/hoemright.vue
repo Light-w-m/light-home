@@ -44,6 +44,13 @@
 
               <template v-slot:append-inner>
                 <v-btn
+                  v-if="searchQuery"
+                  icon="mdi-close-circle-outline"
+                  variant="text"
+                  class="search-clear-btn"
+                  @click.stop="clearSearch"
+                ></v-btn>
+                <v-btn
                   :icon="isUrl ? 'mdi-earth' : 'mdi-magnify'"
                   variant="text"
                   @click="performSearch"
@@ -363,7 +370,14 @@ export default {
 			};
 			window.open(engineUrls[this.selectedEngine.value], '_blank');
 		}
+    this.clearSearch();
 	  },
+    clearSearch(){
+      this.searchQuery = '';
+      this.$nextTick(() => {
+        this.$refs.searchInput?.focus?.();
+      });
+    },
     openCommandPalette(){
       this.commandQuery = '';
       this.commandDialog = true;
@@ -487,6 +501,10 @@ export default {
 
 .search-field {
   flex: 1;
+}
+
+.search-clear-btn {
+  opacity: .72;
 }
 
 .command-trigger {
