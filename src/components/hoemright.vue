@@ -66,7 +66,9 @@
               Ctrl K
             </v-btn>
           </div>
+          <!-- 暂时隐藏中间打字语句；如需恢复，取消下面注释即可。
           <typewriter class="ma-3 d-flex align-center justify-center" style="min-height: 200px;"></typewriter>
+          -->
         </v-col>
         <v-col cols="12" md="4" align="center">
           <v-card class="ma-3 clock-card" hover>
@@ -233,13 +235,14 @@
 </template>
 
 <script>
-import typewriter from '../components/typewriter.vue';
+// import typewriter from '../components/typewriter.vue'; // 暂时隐藏，后续可恢复
 import turntable from '../components/turntable.vue';
 import { useDisplay } from 'vuetify'
 
 export default {
     components: {
-        typewriter,turntable
+        // typewriter, // 暂时隐藏，后续可恢复
+        turntable
     },
     props: ['configdata','formattedTime','formattedDate','projectcards'],
 	data() {

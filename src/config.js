@@ -87,6 +87,7 @@ const config = {
 			{ "title": "书房夜晚", "preview": "/img/wallpaper/static/书房夜晚/image-pre.webp", "url": "/img/wallpaper/static/书房夜晚/image.png" },
 			{ "title": "安逸舒适", "preview": "/img/wallpaper/static/安逸舒适/image-pre.webp", "url": "/img/wallpaper/static/安逸舒适/image-.png" },
 			{ "title": "初音未来", "preview": "/img/wallpaper/static/初音未来/image-pre.webp", "url": "/img/wallpaper/static/初音未来/image.png" },
+			{ "title": "初音2", "preview": "/img/wallpaper/static/初音2/image-pre.webp", "url": "/img/wallpaper/static/初音2/image.png" },
 			{ "title": "哥伦比娅", "preview": "/img/wallpaper/static/哥伦比娅/image-pre.webp", "url": "/img/wallpaper/static/哥伦比娅/image.jpg" },
 			{ "title": "jswcMaMj", "preview": "https://s21.ax1x.com/2025/07/23/pVGli59.md.jpg", "url": "https://s21.ax1x.com/2025/07/23/pVGli59.jpg" },
 			{ "title": "pgtTqoqq", "preview": "https://s21.ax1x.com/2025/07/23/pVGlmDO.md.jpg", "url": "https://s21.ax1x.com/2025/07/23/pVGlmDO.jpg" },
