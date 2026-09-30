@@ -27,6 +27,10 @@ export default {
       configdata: config,
       dialog1: false,
       dialog2: false,
+      qrcodeDialog: false,
+      qrcodeSrc: '',
+      qrcodeTitle: '',
+      qrcodeTip: '',
       personalizedtags: null,
       videosrc: '',
       ismusicplayer: false,
@@ -273,6 +277,13 @@ export default {
     },
     jump(url){
       window.open(url, '_blank').focus();
+    },
+    openQrcode(item){
+      if(!item?.qrcode) return;
+      this.qrcodeSrc = item.qrcode;
+      this.qrcodeTitle = item.qrcodeTitle || item.title || item.name || '扫码添加';
+      this.qrcodeTip = item.qrcodeTip || '';
+      this.qrcodeDialog = true;
     },
     
     async getMusicInfo(){

@@ -55,7 +55,13 @@ const config = {
 	socialPlatformIcons: [
 		{ icon: "mdi-github", link: "https://github.com/Light-w-m" },
 		{ icon: "mdi-email", link: "mailto:Light050712@163.com" },
-		{ icon: "mdi-qqchat", link: "https://im.qq.com/" }
+		// 若填写 qrcode，点击按钮会弹出二维码图片，而不是跳转 link
+		{
+			icon: "mdi-qqchat",
+			link: "https://im.qq.com/",
+			qrcode: "/img/qq-qrcode.png",
+			qrcodeTitle: "QQ"
+		}
 	],
 
 	//打字机

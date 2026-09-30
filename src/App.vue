@@ -121,7 +121,8 @@
                         <v-btn :size="xs?25:33" variant="tonal" color="var(--leleo-vcard-color)"
                         class="ma-1 leleo-social-bticon"
                         icon
-                        :href="item.link" target="_blank"
+                        v-bind="item.qrcode ? {} : { href: item.link, target: '_blank' }"
+                        @click="item.qrcode ? openQrcode(item) : null"
                         >
                     <v-icon :icon=item.icon :size="xs?20:25" class="social-bticon-icon"></v-icon></v-btn>
                     </v-col>
@@ -294,6 +295,21 @@
           </div>
         </v-card>
     </v-dialog>
+
+    <v-dialog
+      v-model="qrcodeDialog"
+      :width="xs ? 300 : 380"
+    >
+      <v-card class="ma-3 pa-3 qrcode-card" variant="tonal" rounded="lg">
+        <template v-slot:title>
+          <span class="leleo-card-title">{{ qrcodeTitle }}</span>
+        </template>
+        <div class="qrcode-body">
+          <img v-if="qrcodeSrc" :src="qrcodeSrc" class="qrcode-img" alt="二维码">
+          <span class="qrcode-tip">{{ qrcodeTip }}</span>
+        </div>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
@@ -301,4 +317,29 @@
 <style scoped>
   @import url(/css/app.less);
   @import url(/css/mobile.less);
+
+  .qrcode-card {
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+
+  .qrcode-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 6px;
+  }
+
+  .qrcode-img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+  }
+
+  .qrcode-tip {
+    font-size: .85rem;
+    opacity: .72;
+  }
 </style>
