@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div>
-      <div :style="xs||sm?{'display':'none'}:{'font-size':'4rem'}" class="leleo-left-welcome">{{ configdata.welcometitle }}</div>
-    </div>
+    <v-row>
+      <v-col cols="12" md="8">
+        <div :style="xs||sm?{'display':'none'}:{'font-size':'4rem','text-align':'center','white-space':'nowrap'}" class="leleo-left-welcome">{{ configdata.welcometitle }}</div>
+      </v-col>
+    </v-row>
 
     <div>
       <v-row align="center">
