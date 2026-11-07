@@ -4,7 +4,7 @@ const config = {
 		title: 'Light的个人主页',
 		description: '欢迎来到Light的奇妙世界！',
 		keywords: 'Light,light,个人主页,个人网站',
-		icon: '/img/Verity.jpg'   //网页图标，支持外链
+		icon: '/favicon.svg'   //网页图标，支持外链
 	},
 
 	avatar: "/img/Verity.jpg", // 头像
