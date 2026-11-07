@@ -247,6 +247,7 @@ export default {
         turntable
     },
     props: ['configdata','formattedTime','formattedDate','projectcards'],
+    emits: ['open-social'],
 	data() {
 		return {
 			searchQuery: '',
@@ -287,7 +288,10 @@ export default {
         label: this.getSocialLabel(item, index),
         description: item.link || '打开社交链接',
         icon: item.icon || 'mdi-link-variant',
-        url: this.normalizeSocialLink(item.link)
+        action: () => {
+          this.commandDialog = false;
+          this.$emit('open-social', item);
+        }
       }));
 
       const actionCommands = [
@@ -464,13 +468,6 @@ export default {
         'mdi-facebook': 'Facebook'
       };
       return item.title || item.name || iconMap[item.icon] || `社交链接 ${index + 1}`;
-    },
-    normalizeSocialLink(link){
-      if(!link) return '';
-      if(link.includes('@') && !/^[a-z]+:/i.test(link)){
-        return `mailto:${link}`;
-      }
-      return link;
     },
 	  isLikelyUrl(input) {
 		// 移除首尾空格

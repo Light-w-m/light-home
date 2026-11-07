@@ -31,6 +31,11 @@ export default {
       qrcodeSrc: '',
       qrcodeTitle: '',
       qrcodeTip: '',
+      emailDialog: false,
+      emailAddress: '',
+      emailHref: '',
+      emailCopyMessage: '',
+      emailCopying: false,
       personalizedtags: null,
       videosrc: '',
       ismusicplayer: false,
@@ -277,6 +282,34 @@ export default {
     },
     jump(url){
       window.open(url, '_blank').focus();
+    },
+    isEmailLink(link){
+      return /^(mailto:|[^:\s]+@)/i.test(link || '');
+    },
+    openSocial(item){
+      if(item.qrcode){
+        this.openQrcode(item);
+      }else if(this.isEmailLink(item.link)){
+        this.emailHref = /^mailto:/i.test(item.link) ? item.link : `mailto:${item.link}`;
+        this.emailAddress = decodeURIComponent(this.emailHref.replace(/^mailto:/i, '').split('?')[0]);
+        this.emailCopyMessage = '';
+        this.emailDialog = true;
+      }else if(item.link){
+        window.open(item.link, '_blank', 'noopener,noreferrer');
+      }
+    },
+    async copyEmail(){
+      this.emailCopying = true;
+      try {
+        await navigator.clipboard.writeText(this.emailAddress);
+        this.emailCopyMessage = '邮箱地址已复制';
+      } catch {
+        this.$refs.emailAddressField?.focus();
+        this.$refs.emailAddressField?.$el.querySelector('input')?.select();
+        this.emailCopyMessage = '无法自动复制，请选中上方邮箱地址手动复制';
+      } finally {
+        this.emailCopying = false;
+      }
     },
     openQrcode(item){
       if(!item?.qrcode) return;

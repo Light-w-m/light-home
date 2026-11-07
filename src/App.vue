@@ -117,12 +117,14 @@
 
                 <v-container class="leleo-left-socialIconsContainer">
                     <v-row align="center" justify="center">
-                    <v-col class="pa-1" cols="auto" v-for="item in socialPlatformIcons">
+                    <v-col class="pa-1" cols="auto" v-for="item in socialPlatformIcons" :key="item.icon">
                         <v-btn :size="xs?25:33" variant="tonal" color="var(--leleo-vcard-color)"
                         class="ma-1 leleo-social-bticon"
                         icon
-                        v-bind="item.qrcode ? {} : { href: item.link, target: '_blank' }"
-                        @click="item.qrcode ? openQrcode(item) : null"
+                        :title="item.title || item.qrcodeTitle || '社交链接'"
+                        :aria-label="item.title || item.qrcodeTitle || '社交链接'"
+                        v-bind="item.qrcode || isEmailLink(item.link) ? {} : { href: item.link, target: '_blank', rel: 'noopener noreferrer' }"
+                        @click="item.qrcode || isEmailLink(item.link) ? openSocial(item) : null"
                         >
                     <v-icon :icon=item.icon :size="xs?20:25" class="social-bticon-icon"></v-icon></v-btn>
                     </v-col>
@@ -152,7 +154,7 @@
 
             <v-col cols="12" md="8" lg="9" style="height: 100vh;" :style="xs||sm ?{}:{'overflow': 'auto'}">
                 <homeright :configdata=configdata :formattedTime=formattedTime 
-                :formattedDate=formattedDate :projectcards=projectcards></homeright>
+                :formattedDate=formattedDate :projectcards=projectcards @open-social="openSocial"></homeright>
             </v-col>
         </v-row>
     </div>
@@ -294,6 +296,29 @@
             </p>
           </div>
         </v-card>
+    </v-dialog>
+
+    <v-dialog v-model="emailDialog" max-width="440">
+      <v-card class="pa-4" rounded="lg" aria-labelledby="email-dialog-title">
+        <v-card-title id="email-dialog-title">联系我</v-card-title>
+        <v-card-text>
+          <v-text-field
+            ref="emailAddressField"
+            :model-value="emailAddress"
+            label="邮箱地址"
+            readonly
+            variant="outlined"
+            hide-details
+          ></v-text-field>
+          <p class="mt-3 text-body-2">可以复制邮箱地址，或使用已配置的邮件应用写信。</p>
+          <p v-if="emailCopyMessage" class="mt-2 text-body-2" role="status">{{ emailCopyMessage }}</p>
+        </v-card-text>
+        <v-card-actions class="flex-wrap">
+          <v-btn prepend-icon="mdi-content-copy" :loading="emailCopying" @click="copyEmail">复制邮箱</v-btn>
+          <v-btn prepend-icon="mdi-email-outline" :href="emailHref" target="_self">打开邮件应用</v-btn>
+          <v-btn @click="emailDialog = false">关闭</v-btn>
+        </v-card-actions>
+      </v-card>
     </v-dialog>
 
     <v-dialog

@@ -4,7 +4,7 @@ const config = {
 		title: 'Light的个人主页',
 		description: '欢迎来到Light的奇妙世界！',
 		keywords: 'Light,light,个人主页,个人网站',
-		icon: '/favicon.ico'   //网页图标，支持外链
+		icon: '/img/Verity.jpg'   //网页图标，支持外链
 	},
 
 	avatar: "/img/Verity.jpg", // 头像
@@ -53,8 +53,8 @@ const config = {
 
 	//社交按钮
 	socialPlatformIcons: [
-		{ icon: "mdi-github", link: "https://github.com/Light-w-m" },
-		{ icon: "mdi-email", link: "mailto:Light050712@163.com" },
+		{ title: "GitHub", icon: "mdi-github", link: "https://github.com/Light-w-m" },
+		{ title: "邮箱", icon: "mdi-email", link: "mailto:Light050712@163.com" },
 		// 若填写 qrcode，点击按钮会弹出二维码图片，而不是跳转 link
 		{
 			icon: "mdi-qqchat",
