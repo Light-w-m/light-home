@@ -33,7 +33,6 @@ export default {
       qrcodeTip: '',
       emailDialog: false,
       emailAddress: '',
-      emailHref: '',
       emailCopyMessage: '',
       emailCopying: false,
       personalizedtags: null,
@@ -290,8 +289,7 @@ export default {
       if(item.qrcode){
         this.openQrcode(item);
       }else if(this.isEmailLink(item.link)){
-        this.emailHref = /^mailto:/i.test(item.link) ? item.link : `mailto:${item.link}`;
-        this.emailAddress = decodeURIComponent(this.emailHref.replace(/^mailto:/i, '').split('?')[0]);
+        this.emailAddress = decodeURIComponent(item.link.replace(/^mailto:/i, '').split('?')[0]);
         this.emailCopyMessage = '';
         this.emailDialog = true;
       }else if(item.link){

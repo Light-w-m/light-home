@@ -310,12 +310,10 @@
             variant="outlined"
             hide-details
           ></v-text-field>
-          <p class="mt-3 text-body-2">可以复制邮箱地址，或使用已配置的邮件应用写信。</p>
           <p v-if="emailCopyMessage" class="mt-2 text-body-2" role="status">{{ emailCopyMessage }}</p>
         </v-card-text>
         <v-card-actions class="flex-wrap">
           <v-btn prepend-icon="mdi-content-copy" :loading="emailCopying" @click="copyEmail">复制邮箱</v-btn>
-          <v-btn prepend-icon="mdi-email-outline" :href="emailHref" target="_self">打开邮件应用</v-btn>
           <v-btn @click="emailDialog = false">关闭</v-btn>
         </v-card-actions>
       </v-card>
