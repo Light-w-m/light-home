@@ -89,6 +89,7 @@ const config = {
 	//壁纸数据 -----可以将壁纸文件上传到图床获取网络直链。若想调用api，请前往脚本自行修改逻辑
 	wallpaper: {
 		pic: [
+			{ "title": "Violet Evergarden", "preview": "/img/wallpaper/static/violet-evergarden/image-pre.webp", "url": "/img/wallpaper/static/violet-evergarden/image.png" },
 			{ "title": "海洋女孩", "preview": "/img/wallpaper/static/海洋女孩/image-pre.webp", "url": "/img/wallpaper/static/海洋女孩/image.png" },
 			{ "title": "书房夜晚", "preview": "/img/wallpaper/static/书房夜晚/image-pre.webp", "url": "/img/wallpaper/static/书房夜晚/image.png" },
 			{ "title": "初音未来", "preview": "/img/wallpaper/static/初音未来/image-pre.webp", "url": "/img/wallpaper/static/初音未来/image.png" },
@@ -96,7 +97,6 @@ const config = {
 			{ "title": "哥伦比娅", "preview": "/img/wallpaper/static/哥伦比娅/image-pre.webp", "url": "/img/wallpaper/static/哥伦比娅/image.jpg" },
 			// { "title": "奥黛塔", "preview": "/img/wallpaper/static/奥黛塔/image-pre.webp", "url": "/img/wallpaper/static/奥黛塔/image.jpg" },
 			{ "title": "jswcMaMj", "preview": "https://s21.ax1x.com/2025/07/23/pVGli59.md.jpg", "url": "https://s21.ax1x.com/2025/07/23/pVGli59.jpg" },
-			{ "title": "dSXZfZp", "preview": "https://s21.ax1x.com/2025/07/23/pVGlaVg.md.jpg", "url": "https://s21.ax1x.com/2025/07/23/pVGlaVg.jpg" },
 		],
 		picMobile: [
 			{ "title": "0001", "preview": "/img/wallpaper/static-mobile/0001/image-pre.webp", "url": "/img/wallpaper/static-mobile/0001/image.png" },
