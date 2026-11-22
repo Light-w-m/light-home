@@ -1,19 +1,14 @@
 <template>
   <div>
-    <v-row>
-      <v-col cols="12" md="8">
-        <div :style="xs||sm?{'display':'none'}:{'font-size':'4rem','text-align':'center','white-space':'nowrap'}" class="leleo-left-welcome">{{ configdata.welcometitle }}</div>
-      </v-col>
-    </v-row>
-
     <div>
       <v-row align="center">
-        <v-col cols="12" md="8">
-          <div class="search-shell" :style="xs||sm?{'display':'none'}:{}">
+        <v-col v-if="!xs && !sm" cols="12" md="8">
+          <div class="welcome-search">
+            <div class="leleo-left-welcome welcome-title">{{ configdata.welcometitle }}</div>
             <v-text-field class="v-card search-field"
               ref="searchInput"
               v-model="searchQuery"
-              placeholder="搜索、输入网址，或按 Ctrl K 打开快捷面板"
+              placeholder="搜索或输入网址"
               variant="outlined"
               rounded
               hide-details="true"
@@ -59,14 +54,6 @@
                 ></v-btn>
               </template>
             </v-text-field>
-            <v-btn
-              class="command-trigger"
-              variant="tonal"
-              prepend-icon="mdi-lightning-bolt-outline"
-              @click="openCommandPalette"
-            >
-              Ctrl K
-            </v-btn>
           </div>
           <!-- 暂时隐藏中间打字语句；如需恢复，取消下面注释即可。
           <typewriter class="ma-3 d-flex align-center justify-center" style="min-height: 200px;"></typewriter>
@@ -394,11 +381,6 @@ export default {
     handleShortcut(event){
       const target = event.target;
       const isTyping = ['INPUT', 'TEXTAREA'].includes(target?.tagName) || target?.isContentEditable;
-      if((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k'){
-        event.preventDefault();
-        this.openCommandPalette();
-        return;
-      }
       if(event.key === '/' && !isTyping && !(this.xs || this.sm)){
         event.preventDefault();
         this.focusSearch();
@@ -495,23 +477,26 @@ export default {
 <style scoped>
 @import url(/css/app.less);
 @import url(/css/mobile.less);
-.search-shell {
+.welcome-search {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+}
+
+.welcome-title {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  text-align: center;
 }
 
 .search-field {
-  flex: 1;
+  width: 100%;
 }
 
 .search-clear-btn {
   opacity: .72;
-}
-
-.command-trigger {
-  height: 48px;
-  color: var(--leleo-vcard-color);
 }
 
 .section-title {

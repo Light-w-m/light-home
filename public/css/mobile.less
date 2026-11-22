@@ -1,5 +1,5 @@
 @media (max-width: 960px){
-    .wallpaper-stage{
+    .vapp-fullscreen-background .wallpaper-stage{
         &__top,
         &__bottom{
             left: 12px;
@@ -19,11 +19,11 @@
         &__center{
             left: 14px;
             bottom: 86px;
-            width: min(260px, 68vw);
+            max-width: calc(100% - 28px);
         }
 
         &__time{
-            font-size: clamp(1.6rem, 9vw, 2.6rem);
+            font-size: min(9vw, 2.6rem);
         }
 
         &__date{

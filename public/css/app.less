@@ -64,7 +64,8 @@
             position: absolute;
             left: 28px;
             bottom: 26px;
-            width: min(360px, 72vw);
+            width: max-content;
+            max-width: calc(100% - 56px);
             text-align: left;
             opacity: .72;
         }
@@ -73,6 +74,7 @@
             font-size: clamp(1.9rem, 5vw, 3.4rem);
             line-height: 1;
             font-weight: 800;
+            white-space: nowrap;
         }
 
         &__date {

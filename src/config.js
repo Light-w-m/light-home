@@ -157,7 +157,7 @@ const config = {
 		{ go: "🗃 前往", img: "/img/resources/photo/风景.jpg", title: "Photo", subtitle: "图片、壁纸与素材收藏", text: "这里收纳从本地导入的图片资源。部署后，别人可以通过当前域名访问这个资源页。", url: "/resources/index.html", status: "Ready", tags: ["Assets", "Gallery"], show: false },
 		{ go: "🎨 前往", img: "/img/sunshine.jpg", title: "视觉实验室", subtitle: "动效、主题与交互草稿", text: "适合展示 Canvas、Three.js、CSS 动效或主页主题实验。", url: "", status: "Lab", tags: ["Motion", "UI"], show: false },
 		{ go: "💍 前往", img: "/img/sunshine.jpg", title: "纪念相册", subtitle: "照片、旅行与重要瞬间", text: "后续可以做成时间线相册，静态图片也能很好看。", url: "", status: "Soon", tags: ["Gallery", "Life"], show: false },
-		{ go: "🔍 前往", img: "/img/sunshine.jpg", title: "快捷导航", subtitle: "搜索之外的一键抵达", text: "和 Ctrl K 快捷面板配合，作为常用站点、项目和社交链接的入口。", url: "", status: "Ready", tags: ["Search", "Quick"], show: false },
+		{ go: "🔍 前往", img: "/img/sunshine.jpg", title: "快捷导航", subtitle: "搜索之外的一键抵达", text: "移动端可通过快捷面板查找项目或打开社交链接。", url: "", status: "Ready", tags: ["Search", "Quick"], show: false },
 	],
 
 	statement: ["备案号：XXICP备123456789号", "Copyright © 2025 Light"],
