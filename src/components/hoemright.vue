@@ -504,7 +504,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 12px 12px 0;
+  padding: 36px 12px 0;
 }
 
 .clock-card {
